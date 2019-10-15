@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  h1 #{title}
+          
+  form(method='POST' action='')
+    div.form-group
+      label(for='license') License:
+      input#license.form-control(type='text', placeholder='Fantasy, Poetry etc.' name='license' required='true' value=(undefined===car ? '' : car.license) )
+      label(for='model') Model:
+      input#model.form-control(type='text', placeholder='Fantasy, Poetry etc.' name='model' required='true' value=(undefined===car ? '' : car.model) )
+      label(for='city') City:
+      input#city.form-control(type='text', placeholder='Fantasy, Poetry etc.' name='city' required='true' value=(undefined===car ? '' : car.city) )
+      label(for='type') Type:
+      input#type.form-control(type='text', placeholder='Fantasy, Poetry etc.' name='type' required='true' value=(undefined===car ? '' : car.type) )
+      label(for='fare') Fare:
+      input#fare.form-control(type='text', placeholder='Fantasy, Poetry etc.' name='fare' required='true' value=(undefined===car ? '' : car.fare) )
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

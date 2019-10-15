@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+  h1 car: #{car.license}
+  
+  hr
+  p
+    a(href=car.url+'/delete') Delete car
+  p
+    a(href=car.url+'/update') Update car

@@ -1,0 +1,30 @@
+extends layout
+
+block content
+ h1= title
+ h3 Booking:
+ h3 Booking: #{loan.email}
+ h3 city: #{loan.city}
+ h3 booking date: #{loan.start_date}
+ h3 return date: #{loan.end_date}
+  table(style='width:100%', border='1')
+    tr
+     th Select
+     th License
+     th City
+     th Model
+     th Type
+     th fare
+     th status
+    each val in list_loans
+     tr
+      th 
+        button select
+      th 
+       a(href=val.url) #{val.license}
+      th #{val.city}
+      th #{val.model}
+      th #{val.type}
+      th #{val.fare}
+      th #{val.status}
+     

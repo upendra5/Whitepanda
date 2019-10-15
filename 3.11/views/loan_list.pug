@@ -1,0 +1,33 @@
+extends layout
+
+block content
+ h1= title
+ h1 Booking:
+ h1 Booking: #{loan.email}
+ h1 city: #{loan.city}
+ h1 booking date: #{loan.start_date}
+ h1 return date: #{loan.end_date}
+ h1 car model:#{loan_car.model}
+ h1 car rent per day:#{loan_car.fare}
+ h1 car plate number: #{loan.license}
+  table(style='width:100%', border='1')
+    tr
+     th Select
+     th License
+     th City
+     th Model
+     th Type
+     th fare
+     th status
+    each val in list_loans
+     tr
+      th 
+        button select
+      th 
+       a(href=val.url) #{val.license}
+      th #{val.city}
+      th #{val.model}
+      th #{val.type}
+      th #{val.fare}
+      th #{val.status}
+     

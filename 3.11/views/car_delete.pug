@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+  h1 Delete Car License PlateNo: #{car.license}
+  
+    p Do you really want to delete this Car?
+    
+    form(method='POST' action='')
+      div.form-group
+        input#id.form-control(type='hidden',name='id', required='true', value=car._id )
+
+      button.btn.btn-primary(type='submit') Delete

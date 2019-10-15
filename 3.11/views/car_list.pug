@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  table(style='width:100%', border='1')
+    tr
+     th License
+     th City
+     th Model
+     th Type
+     th fare
+     th status
+    each val in list_cars
+     tr
+      th 
+       a(href=val.url) #{val.license}
+      th #{val.city}
+      th #{val.model}
+      th #{val.type}
+      th #{val.fare}
+      th #{val.status}
